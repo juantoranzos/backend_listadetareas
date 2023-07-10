@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { borrarTarea, crearTarea, obtenerTareas } from "../controllers/tarea.controllers";
+import { borrarTarea, crearTarea, editarTarea, obtenerTareas } from "../controllers/tarea.controllers";
  const router = Router()
 
 // app.get('/test', (req, res)=>{
@@ -9,7 +9,7 @@ import { borrarTarea, crearTarea, obtenerTareas } from "../controllers/tarea.con
 // })
 
 router.route('/tareas').get(obtenerTareas).post(crearTarea)
-router.route('/tareas/:id').delete(borrarTarea)
+router.route('/tareas/:id').delete(borrarTarea).put(editarTarea);
 
 
 export default router

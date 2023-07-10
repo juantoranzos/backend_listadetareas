@@ -50,5 +50,21 @@ export const borrarTarea = async (req, res)=>{
     })
  }
 
+};
+
+//controlador para editar una tarea
+export const editarTarea = async (req, res)=>{
+    try{
+       // extraer el id del request y el body
+      await Tarea.findByIdAndUpdate(req.params.id, req.body);
+      res.status(200).json({
+        mensaje: 'la tarea se pudo editar'
+      })
+    }catch(error){
+        console.log(error);
+        res.status(404).json({
+            mensaje: 'la tarea no se pudo ser editada'
+        })
+    }
 }
 
