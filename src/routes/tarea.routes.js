@@ -4,9 +4,8 @@ const router = Router()
 
 router.route('/tareas').get(obtenerTareas).post(crearTarea)
 
-router.route('/tareas/:id').delete(borrarTarea).put
+router.route('/tareas/:id').put(editarTarea).delete(borrarTarea).get(obtenerTarea)
 
-(editarTarea).get(obtenerTarea);
 
 
 export default router
