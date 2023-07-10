@@ -3,6 +3,7 @@ import cors from 'cors'
 import morgan from 'morgan';
 import * as dotenv from 'dotenv'
 import './src/database/dbConnection'
+import tareasRouter from './src/routes/tarea.routes'
 
 //configuramos un puerto
 //creo una instancia de express
@@ -20,11 +21,9 @@ app.use(express.urlencoded({extended: true})); // permite en el objeto request l
 app.use(morgan('dev')) //nos da info extra en la terminal
 
 //rutas
-app.get('/test', (req, res)=>{
-    res.send('esto es una prueba de la peticion GET a mi backend')
+// http://localhost:3005/apilistatareas/tareas
+app.use("/apilistatareas", tareasRouter)
 
-
-})
 
 
 
