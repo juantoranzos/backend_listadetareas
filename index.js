@@ -4,6 +4,9 @@ import morgan from 'morgan';
 import * as dotenv from 'dotenv'
 import './src/database/dbConnection'
 import tareasRouter from './src/routes/tarea.routes'
+import './src/database/dbConnection'
+
+dotenv.config()
 
 //configuramos un puerto
 //creo una instancia de express
