@@ -65,6 +65,21 @@ export const editarTarea = async (req, res)=>{
         res.status(404).json({
             mensaje: 'la tarea no se pudo ser editada'
         })
-    }
-}
+    }}
 
+
+
+export const obtenerTarea = async (req, res) => {
+    try {
+        const tarea = await Tarea.findById(req.params.id)
+        res.status(200).json(tarea)
+
+
+    } catch (error) {
+        console.log(error)
+        res.status(404).json({
+            mansaje: 'error al buscar tareas'
+        })
+    }
+
+}
